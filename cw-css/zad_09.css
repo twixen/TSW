@@ -1,0 +1,10 @@
+body {
+	background-color: lightgrey;
+	margin: 0px;
+}
+#menu {
+	text-align: center;
+	border: 3px outset black;
+	background-color: whitesmoke;
+	padding: 3px;
+}

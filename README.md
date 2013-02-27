@@ -1,4 +1,4 @@
-﻿Technologie sieci Web 
+﻿Technologie sieci Web
 ==
 dr Wiesław Pawłowski
 --

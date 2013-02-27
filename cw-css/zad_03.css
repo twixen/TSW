@@ -1,0 +1,15 @@
+.tresc{
+	border: 2px solid;
+	padding: 20px;
+	margin-left: 120px;
+}
+img {
+	float: left;
+}
+body {
+	background: url('listki.gif') repeat-y;
+}
+p {
+	text-indent: 10px;
+	text-align: justify;
+}

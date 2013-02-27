@@ -1,0 +1,20 @@
+body {
+	background-color: lightgrey;
+	margin: 0px;
+}
+#menu {
+	text-align: center;
+	border: 3px outset black;
+	background-color: whitesmoke;
+	padding: 4px;
+}
+a {
+	color: darkred;
+	text-decoration: none;
+	border: 1px outset black;
+	padding: 1px;
+}
+a:hover {
+	background-color: white;
+	border: 1px inset black;
+}

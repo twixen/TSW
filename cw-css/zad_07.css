@@ -1,0 +1,20 @@
+div{
+	position: relative;
+	height: 0em;
+	width: 0em;
+}
+* { 
+	font-size: large; 
+} 
+div.A , div.B {
+	left: 2em; 
+}
+div.A {
+	top: -0.5em;
+}
+div.B {
+	top: -2em;
+}
+div.C {
+	top: 2em;
+}

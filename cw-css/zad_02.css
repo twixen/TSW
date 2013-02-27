@@ -1,0 +1,9 @@
+.tresc {
+	background: url('papier.gif');
+	border: 2px solid;
+	padding: 10px;
+}
+p {
+	text-indent: 10px;
+	text-align: justify;
+}

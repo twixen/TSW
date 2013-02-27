@@ -1,0 +1,28 @@
+body {
+	background-image: url('papier.gif');
+}
+div.adres {
+	background-color: yellow;
+	width: 10em;
+	border: 3px solid black;
+	padding: 5px 10px;
+	margin: 10px auto;
+}
+span.nazwisko {
+	color: blue;
+	display: block;
+	font-weight: bold;
+	border-bottom: thin solid blue;
+	border-top: thin solid blue;
+}
+span.ulica {
+	color: green;
+	display: block;
+}
+span.kod {
+	color: red;
+}
+span.miejscowosc {}
+span.telefon {
+	display: block;
+}

@@ -1,0 +1,27 @@
+div{
+	position: relative;
+	height: 0em;
+	width: 0em;
+}
+* { 
+	font-size: large; 
+} 
+div.A , div.B {
+	left: 2em; 
+}
+div.A {
+	top: -0.5em;
+}
+div.B {
+	top: -2em;
+}
+div.C > div.A {
+	top: 1em;
+}
+div.C {
+	margin: 0px auto;
+	background-color: bisque;
+	border: 1px solid red;
+	width: 25em;
+	height: 4em;
+}
