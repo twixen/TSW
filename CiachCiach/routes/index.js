@@ -2,12 +2,9 @@ exports.init = function (req, res) {
     res.end(JSON.stringify("INIT DONE"));
 };
 
-
 exports.index = function (req, res) {
     req.session.puzzle = req.session.puzzle || req.app.get('puzzle');
-    res.render('index', {
-        title: 'Mastermind'
-    });
+    res.render('index');
 };
 
 exports.play = function (req, res) {
