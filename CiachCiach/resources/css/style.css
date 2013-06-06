@@ -1,0 +1,21 @@
+#game {
+	margin: 0px auto;
+	width: 600px;
+}
+#stats {
+	width: 160px;
+	height: 440px;
+	background-color: blue;
+	float: left;
+}
+#board {
+	width: 440px;
+	height: 440px;
+	float: left;
+}
+#board > div{
+	width: 40px;
+	height: 40px;
+	background-color: red;
+	float: left;
+}
