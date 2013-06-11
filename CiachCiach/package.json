@@ -1,11 +1,11 @@
 {
-  "name": "ciachciach",
-  "description": "the best hack and slash game",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "express": "*",
-	"ejs": "*",
-	"socket.io": "*"
-  }
+    "name": "ciachciach",
+    "description": "the best hack and slash game",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "express": "*",
+        "ejs": "*",
+        "socket.io": "*"
+    }
 }

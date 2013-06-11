@@ -1,31 +1,21 @@
 var socket = io.connect('http://localhost');
 var canvas, ctx, images, id;
 
-
 var onReady = function() {
-    canvas = document.getElementById('canvas');
+    canvas = $('#canvas')[0];
     ctx = canvas.getContext('2d');
-
-    //ctx.fillStyle = "green";
-    //ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-//    for (var i = 0; i < 121; i++)
-//    {
-//        $('#board').append('<div class="ground"></div>');
-//    }
-
     socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
     socket.on('init', onInit);
-    socket.on('move', onInit);
+    socket.on('move', onMove);
     socket.on('refresh', onRefresh);
 };
 var onConnect = function() {
-    socket.emit('init');
-    document.onkeydown = onKey;
+    id = document.cookie.split('=')[1];
+    socket.emit('init', {id: id});
+    $(document).keydown(onKey);
 };
 var onDisconnect = function() {
-     console.log('disconnected');
 };
 
 var onRefresh = function(data) {
@@ -33,18 +23,33 @@ var onRefresh = function(data) {
 };
 
 var onInit = function(data) {
-    console.log('init');
-    id = data.id;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(images[0], 0, 0);
-    ctx.drawImage(images[2], 200, 200);
-    for (var i = 0; i < data.tree.length; i++)
-    {
-       ctx.drawImage(images[1], data.tree[i].x, data.tree[i].y);
+    if (!id || id !== data.id) {
+        var now = new Date();
+        var time = now.getTime();
+        now.setTime(time + 31536000000);
+        document.cookie = 'SESSIONID=' + data.id + ';expires=' + now.toGMTString();
     }
-    for (var i = 0; i < data.player.length; i++)
-    {
-       ctx.drawImage(images[3], data.player[i].x, data.player[i].y);
+    id = data.id;
+    onMove(data);
+};
+
+var onMove = function(data) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (data.dead === true) {
+        ctx.drawImage(images[4], 0, 0);
+        $(document).unbind('keydown');
+    }
+    else {
+        ctx.drawImage(images[0], 0, 0);
+        ctx.drawImage(images[2], 200, 200);
+        for (var i = 0; i < data.tree.length; i++)
+        {
+            ctx.drawImage(images[1], data.tree[i].x, data.tree[i].y);
+        }
+        for (var i = 0; i < data.player.length; i++)
+        {
+            ctx.drawImage(images[3], data.player[i].x, data.player[i].y);
+        }
     }
 };
 
@@ -69,14 +74,12 @@ var initImages = function() {
     img = new Image();
     img.src = "img/op.png";
     images[3] = img;
+    img = new Image();
+    img.src = "img/bg2.png";
+    images[4] = img;
 };
+
+
 initImages();
+$(window).ready(onReady);
 
-
-//var now = new Date();
-//var time = now.getTime();
-//now.setTime(time + 31536000000);
-//document.cookie = 'SESSIONID=' + 00000 + ';expires=' + now.toGMTString();
-//console.log(document.cookie);
-
-window.onload = onReady;
