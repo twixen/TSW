@@ -1,0 +1,12 @@
+{
+  "name": "ciachciach",
+  "description": "the best hack and slash game",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+	"ejs": "*",
+	"node-minify": "*",
+	"socket.io": "*"
+  }
+}
