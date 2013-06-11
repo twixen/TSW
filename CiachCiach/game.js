@@ -188,7 +188,7 @@ var generateBoard = function(p) {
     var newtree = [];
     for (var i = 0; i < tree.length; i++)
     {
-        if (tree[i].getX() >= xmin && tree[i].getX() < xmax && tree[i].getY() >= ymin && tree[i].getY() < ymax) {
+        if (tree[i].getX() >= xmin && tree[i].getX() <= xmax && tree[i].getY() >= ymin && tree[i].getY() <= ymax) {
             newtree[newtree.length] = {x: tree[i].getX() - x, y: tree[i].getY() - y};
         }
     }
@@ -196,7 +196,7 @@ var generateBoard = function(p) {
     var opponent = [];
     for (var i = 0; i < player.length; i++)
     {
-        if (p !== player[i] && player[i].getX() >= xmin && player[i].getX() < xmax && player[i].getY() >= ymin && player[i].getY() < ymax) {
+        if (p !== player[i] && player[i].getX() >= xmin && player[i].getX() <= xmax && player[i].getY() >= ymin && player[i].getY() <= ymax) {
             opponent[opponent.length] = {x: player[i].getX() - x, y: player[i].getY() - y};
         }
     }
