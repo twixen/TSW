@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect(window.location.hostname);
 var canvas, ctx, images, id;
 
 var onReady = function() {
@@ -81,5 +81,5 @@ var initImages = function() {
 
 
 initImages();
-$(window).ready(onReady);
+$(document).ready(onReady);
 

@@ -3,7 +3,7 @@ var io = require('socket.io');
 var app = express();
 
 app.configure(function() {
-    app.set('port', 3000);
+    app.set('port', 5000);
     app.set('views', 'views');
     app.set('view engine', 'ejs');
     app.use(express.static('public'));
@@ -184,15 +184,9 @@ var movePlayer = function(data, p) {
     return p;
 };
 var fight = function(p1, p2) {
-    var xxx = Math.round((Math.random()));
-    if (xxx === 1) {
-        console.log(xxx, 1, 'p1');
+    
         p1.setDead();
-    }
-    else {
-        console.log(xxx, 0, 'p2');
-        p1.setDead();
-    }
+    
 };
 var checkTree = function(p) {
     tree = app.get('tree');
