@@ -1,4 +1,5 @@
-var trojmian = function() {
+// ZAD 8
+var trojmian = (function() {
     var a = 2, b = 3, c = 7,
     mult = function() {
         var i, res = 1;
@@ -14,6 +15,7 @@ var trojmian = function() {
         a: a,
         b: b,
         c: c,
-        delta: delta
+        delta: delta()
     };
-};
+})();
+console.log(trojmian);
